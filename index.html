@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Matemática y El hombre que calculaba</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<header>
+    <h1>Matemática con JavaScript</h1>
+    <p>Ejercicios 12 y 13 · El hombre que calculaba · Formularios, algoritmos y resultados</p>
+</header>
+
+<main>
+
+    <nav aria-label="Navegación de la página">
+        <a href="#ej12">Ejercicio 12</a>
+        <a href="#ej13">Ejercicio 13</a>
+        <a href="#cap12">Libro: capítulo XII</a>
+        <a href="#cap13">Libro: capítulo XIII</a>
+        <a href="#guia">Descripción y algoritmos</a>
+        <a href="#lista">Lista de problemas</a>
+    </nav>
+
+    <section id="ej12">
+        <h2>1. Ejercicio 12 — Ecuación cuadrática</h2>
+
+        <p><b>Descripción:</b> calcular las raíces reales de la ecuación ax² + bx + c = 0 mediante el discriminante D = b² − 4ac.</p>
+
+        <form id="formCuadratica">
+            <div class="grid">
+                <div>
+                    <label for="a">Coeficiente a</label>
+                    <input id="a" type="number" step="any" value="3" required>
+                </div>
+                <div>
+                    <label for="b">Coeficiente b</label>
+                    <input id="b" type="number" step="any" value="6" required>
+                </div>
+                <div>
+                    <label for="c">Coeficiente c</label>
+                    <input id="c" type="number" step="any" value="3" required>
+                </div>
+            </div>
+            <button type="submit">Calcular raíces</button>
+        </form>
+
+        <div id="resCuadratica" class="result" aria-live="polite">
+            Introduce a, b y c y pulsa “Calcular raíces”.
+        </div>
+
+        <p><b>Entrada:</b> los coeficientes a, b y c; a debe ser distinto de cero.</p>
+        <p><b>Salida:</b> discriminante y dos raíces, una raíz doble o mensaje de que no existen raíces reales.</p>
+        <p><b>Algoritmo:</b> leer los tres coeficientes; comprobar que a ≠ 0; calcular D; si D &gt; 0 calcular dos raíces; si D = 0 calcular una raíz doble; si D &lt; 0 informar que no hay raíces reales.</p>
+    </section>
+
+    <section id="ej13">
+        <h2>2. Ejercicio 13 — Aproximar π con una suma infinita</h2>
+
+        <p><b>Descripción:</b> aproximar π con la suma parcial de la serie π = √(6 × Σ 1/k²), desde k = 1 hasta N.</p>
+
+        <form id="formPi">
+            <label for="n">Cantidad de términos N (de 1 a 1 000 000)</label>
+            <input id="n" type="number" min="1" max="1000000" step="1" value="10000" required>
+            <button type="submit">Calcular aproximación</button>
+        </form>
+
+        <div id="resPi" class="result" aria-live="polite">
+            Introduce N y pulsa “Calcular aproximación”.
+        </div>
+
+        <p><b>Entrada:</b> un entero N ≥ 1.</p>
+        <p><b>Salida:</b> aproximación de π, valor de referencia Math.PI y error absoluto.</p>
+        <p><b>Algoritmo:</b> iniciar suma = 0; recorrer k desde 1 hasta N; acumular 1/(k × k); calcular √(6 × suma); mostrar el resultado y compararlo con Math.PI.</p>
+    </section>
+
+    <section id="cap12">
+        <h2>3. El hombre que calculaba — Capítulo XII: el problema de los 60 melones</h2>
+
+        <p><b>Resumen con palabras propias:</b> dos partidas de melones se venden originalmente a tarifas distintas. Al mezclar las partidas y venderlas con una tarifa común, el ingreso puede no coincidir con el ingreso esperado por separado. El ejercicio permite comparar los resultados.</p>
+
+        <form id="formMelones">
+            <div class="grid">
+                <div>
+                    <label for="mA">Melones de la partida A</label>
+                    <input id="mA" type="number" min="1" step="1" value="30" required>
+                </div>
+                <div>
+                    <label for="pA">Melones por dinar (A)</label>
+                    <input id="pA" type="number" min="1" step="1" value="3" required>
+                </div>
+                <div>
+                    <label for="mB">Melones de la partida B</label>
+                    <input id="mB" type="number" min="1" step="1" value="30" required>
+                </div>
+                <div>
+                    <label for="pB">Melones por dinar (B)</label>
+                    <input id="pB" type="number" min="1" step="1" value="2" required>
+                </div>
+                <div>
+                    <label for="tamLote">Melones por lote combinado</label>
+                    <input id="tamLote" type="number" min="1" step="1" value="5" required>
+                </div>
+                <div>
+                    <label for="dinLote">Dinares por lote combinado</label>
+                    <input id="dinLote" type="number" min="0.01" step="any" value="2" required>
+                </div>
+            </div>
+            <button type="submit">Calcular ingresos</button>
+        </form>
+
+        <div id="resMelones" class="result" aria-live="polite">
+            Introduce los datos para comparar los ingresos.
+        </div>
+
+        <p><b>Entrada:</b> cantidad de melones y tarifa de cada partida, tamaño del lote combinado y precio por lote.</p>
+        <p><b>Salida:</b> ingreso esperado por separado, ingreso combinado, sobrantes y diferencia.</p>
+        <p><b>Algoritmo:</b> calcular el ingreso de cada partida; sumar los ingresos; calcular los lotes completos de la partida mezclada; multiplicar por el precio del lote; comparar los ingresos.</p>
+    </section>
+
+    <section id="cap13">
+        <h2>4. El hombre que calculaba — Capítulo XIII: números amigos</h2>
+
+        <p><b>Resumen con palabras propias:</b> dos números son amigos cuando la suma de los divisores propios del primero es igual al segundo y la suma de los divisores propios del segundo es igual al primero. Un ejemplo conocido es 220 y 284.</p>
+
+        <form id="formAmigos">
+            <div class="grid">
+                <div>
+                    <label for="numA">Primer número</label>
+                    <input id="numA" type="number" min="1" max="1000000" step="1" value="220" required>
+                </div>
+                <div>
+                    <label for="numB">Segundo número</label>
+                    <input id="numB" type="number" min="1" max="1000000" step="1" value="284" required>
+                </div>
+            </div>
+            <button type="submit">Comprobar números</button>
+        </form>
+
+        <div id="resAmigos" class="result" aria-live="polite">
+            Introduce dos números y pulsa “Comprobar números”.
+        </div>
+
+        <p><b>Entrada:</b> dos enteros positivos.</p>
+        <p><b>Salida:</b> suma de los divisores propios de cada número y mensaje que indica si son amigos.</p>
+        <p><b>Algoritmo:</b> para cada número, recorrer los enteros desde 1 hasta número − 1; si el residuo de la división es cero, sumar el divisor. Comparar cada suma con el otro número.</p>
+    </section>
+
+    <section id="guia">
+        <h2>5. Descripción general, algoritmo, entrada y salida</h2>
+
+        <div class="problem">
+            <h3>Ecuación cuadrática</h3>
+            <p><b>Descripción:</b> determinar las raíces reales de una ecuación de segundo grado.</p>
+            <p><b>Entrada:</b> a, b y c.</p>
+            <p><b>Algoritmo:</b> calcular D = b² − 4ac y decidir según el signo de D.</p>
+            <p><b>Salida:</b> raíces reales o aviso de que no existen raíces reales.</p>
+        </div>
+
+        <div class="problem">
+            <h3>Aproximación de π</h3>
+            <p><b>Descripción:</b> aproximar π usando una suma de términos.</p>
+            <p><b>Entrada:</b> número de términos N.</p>
+            <p><b>Algoritmo:</b> usar un ciclo for para sumar 1/k² y calcular √(6 × suma).</p>
+            <p><b>Salida:</b> π aproximado y error absoluto.</p>
+        </div>
+
+        <div class="problem">
+            <h3>Problema de los melones</h3>
+            <p><b>Descripción:</b> comparar ingresos de dos tarifas de venta.</p>
+            <p><b>Entrada:</b> cantidades y precios.</p>
+            <p><b>Algoritmo:</b> calcular ingresos por separado y en lotes combinados.</p>
+            <p><b>Salida:</b> ingresos y diferencia.</p>
+        </div>
+
+        <div class="problem">
+            <h3>Números amigos</h3>
+            <p><b>Descripción:</b> comprobar una pareja de números amigos.</p>
+            <p><b>Entrada:</b> dos enteros positivos.</p>
+            <p><b>Algoritmo:</b> sumar divisores propios y comparar.</p>
+            <p><b>Salida:</b> las sumas y si forman una pareja amiga.</p>
+        </div>
+    </section>
+
+    <section id="lista">
+        <h2>6. Lista de problemas matemáticos para practicar</h2>
+
+        <p>Los siguientes problemas sirven para practicar algoritmos y razonamiento matemático. No son transcripciones literales del libro.</p>
+
+        <div class="problem">
+            <h3>1. Los 60 melones</h3>
+            <p>Comparar la venta de dos partidas con tarifas distintas y la venta de todos los melones por lotes.</p>
+            <p><b>Entrada:</b> cantidades y precios. <b>Salida:</b> ingresos y diferencia.</p>
+        </div>
+
+        <div class="problem">
+            <h3>2. Números amigos</h3>
+            <p>Verificar si dos números cumplen la relación de amistad mediante sus divisores propios.</p>
+            <p><b>Entrada:</b> dos enteros. <b>Salida:</b> sumas y resultado.</p>
+        </div>
+
+        <div class="problem">
+            <h3>3. Los 35 camellos</h3>
+            <p>Explorar un reparto de camellos basado en fracciones.</p>
+            <p><b>Entrada:</b> cantidad total y fracciones. <b>Salida:</b> cantidades repartidas y sobrante.</p>
+            <p><b>Algoritmo:</b> calcular cada fracción y comprobar el total.</p>
+        </div>
+
+        <div class="problem">
+            <h3>4. Los ocho panes y las monedas</h3>
+            <p>Calcular cómo repartir un pago según la contribución de cada viajero al alimento compartido.</p>
+            <p><b>Entrada:</b> panes aportados y pago. <b>Salida:</b> pago asignado.</p>
+            <p><b>Algoritmo:</b> calcular la contribución efectiva de cada uno y repartir proporcionalmente.</p>
+        </div>
+
+        <div class="problem">
+            <h3>5. Granos de trigo en un tablero</h3>
+            <p>Duplicar un grano en cada casilla y calcular la cantidad acumulada.</p>
+            <p><b>Entrada:</b> número de casillas. <b>Salida:</b> granos de la última casilla y suma.</p>
+            <p><b>Algoritmo:</b> usar un ciclo para duplicar y acumular.</p>
+        </div>
+
+        <div class="problem">
+            <h3>6. Reparto en grupos iguales</h3>
+            <p>Calcular grupos completos y objetos sobrantes.</p>
+            <p><b>Entrada:</b> total y tamaño del grupo. <b>Salida:</b> cociente entero y residuo.</p>
+            <p><b>Algoritmo:</b> usar Math.floor(total/tamaño) y el operador %.</p>
+        </div>
+
+        <p class="note"><b>Nota:</b> los capítulos se resumen con palabras propias. Si el docente exige que cada problema corresponda exactamente a un capítulo, verifica los títulos y contenidos con la edición indicada.</p>
+    </section>
+
+</main>
+
+<footer>
+    Trabajo educativo · Todo está incluido en esta única página HTML.
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
