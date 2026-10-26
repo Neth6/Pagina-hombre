@@ -1,0 +1,132 @@
+:root {
+    font-family: Arial, sans-serif;
+    color: #1c293a;
+    background: #f2f5f9;
+    line-height: 1.55;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+  }
+  
+  header {
+    background: #1e3b60;
+    color: white;
+    padding: 28px 16px;
+    text-align: center;
+  }
+  
+  main {
+    max-width: 1050px;
+    margin: 20px auto;
+    padding: 0 14px;
+  }
+  
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 20px;
+  }
+  
+  nav a {
+    background: #285985;
+    color: white;
+    text-decoration: none;
+    padding: 9px 12px;
+    border-radius: 7px;
+    font-size: 0.94rem;
+  }
+  
+  section {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 0 0 18px;
+    box-shadow: 0 3px 12px #152b4510;
+    scroll-margin-top: 12px;
+  }
+  
+  h2 {
+    color: #1e4773;
+    margin-top: 0;
+    border-bottom: 2px solid #e3eaf2;
+    padding-bottom: 8px;
+  }
+  
+  h3 {
+    color: #285985;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0 5px;
+  }
+  
+  input {
+    padding: 10px;
+    border: 1px solid #b9c6d6;
+    border-radius: 7px;
+    width: 100%;
+    max-width: 420px;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 12px;
+  }
+  
+  button {
+    cursor: pointer;
+    border: 0;
+    border-radius: 8px;
+    background: #285985;
+    color: white;
+    padding: 11px 15px;
+    font-weight: bold;
+    margin-top: 12px;
+  }
+  
+  .result {
+    margin-top: 14px;
+    background: #edf5ff;
+    border-left: 4px solid #285985;
+    padding: 13px;
+    border-radius: 6px;
+    white-space: pre-wrap;
+  }
+  
+  .problem {
+    padding: 13px;
+    margin: 12px 0;
+    border: 1px solid #d7e0ec;
+    border-radius: 8px;
+  }
+  
+  code {
+    background: #eef1f5;
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+  
+  small {
+    color: #586981;
+  }
+  
+  .note {
+    background: #fff8e5;
+    padding: 12px;
+    border-radius: 8px;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    color: #586981;
+  }
